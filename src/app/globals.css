@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e9f7df;
+  --foreground: #17240f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@layer utilities {
+  .football-field {
+    position: relative;
+    overflow-x: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse at center, rgba(111, 190, 37, .24), transparent 45%),
+      radial-gradient(ellipse at center, transparent 42%, rgba(0, 31, 16, .62) 100%),
+      repeating-linear-gradient(
+        90deg,
+        #126d1e 0 12.5%,
+        #1f8b25 12.5% 25%,
+        #16761f 25% 37.5%,
+        #299329 37.5% 50%
+      );
+  }
+
+  .football-field::before {
+    position: fixed;
+    z-index: -2;
+    top: max(16px, 2.8vh);
+    bottom: max(16px, 2.8vh);
+    left: 50%;
+    width: min(92vw, 760px);
+    transform: translateX(-50%);
+    pointer-events: none;
+    content: "";
+    opacity: .82;
+    background:
+      linear-gradient(#eef9d7, #eef9d7) 0 50% / 100% 4px no-repeat,
+      radial-gradient(circle at 50% 50%, transparent 0 13.1%, #eef9d7 13.25% 13.8%, transparent 14%),
+      radial-gradient(circle at 50% 50%, #eef9d7 0 6px, transparent 7px),
+      linear-gradient(#eef9d7, #eef9d7) 0 0 / 100% 5px no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 0 100% / 100% 5px no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 0 0 / 5px 100% no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 100% 0 / 5px 100% no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 19% 0 / 62% 5px no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 19% 18% / 62% 5px no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 19% 0 / 5px 18% no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 81% 0 / 5px 18% no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 33% 0 / 34% 5px no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 33% 8% / 34% 5px no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 33% 0 / 5px 8% no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 67% 0 / 5px 8% no-repeat,
+      radial-gradient(circle at 50% 18%, transparent 0 8.7%, #eef9d7 8.9% 9.45%, transparent 9.7%),
+      linear-gradient(#eef9d7, #eef9d7) 19% 100% / 62% 5px no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 19% 82% / 62% 5px no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 19% 82% / 5px 18% no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 81% 82% / 5px 18% no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 33% 100% / 34% 5px no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 33% 92% / 34% 5px no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 33% 92% / 5px 8% no-repeat,
+      linear-gradient(90deg, #eef9d7, #eef9d7) 67% 92% / 5px 8% no-repeat,
+      radial-gradient(circle at 50% 82%, transparent 0 8.7%, #eef9d7 8.9% 9.45%, transparent 9.7%),
+      linear-gradient(#eef9d7, #eef9d7) 40% -3.5% / 20% 4px no-repeat,
+      linear-gradient(#eef9d7, #eef9d7) 40% 103.5% / 20% 4px no-repeat;
+    box-shadow:
+      inset 0 0 0 4px rgba(238, 249, 215, .88),
+      inset 0 0 50px rgba(13, 64, 17, .38),
+      0 0 44px rgba(0, 27, 15, .42);
+  }
+
+  .football-field::after {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    opacity: .9;
+    background:
+      radial-gradient(ellipse at center, transparent 46%, rgba(0, 20, 12, .72) 100%),
+      repeating-conic-gradient(
+        from 45deg,
+        rgba(14, 85, 22, .26) 0 25%,
+        rgba(83, 164, 28, .18) 0 50%
+      ),
+      radial-gradient(circle at 18% 24%, rgba(188, 230, 64, .24) 0 2px, transparent 3px),
+      radial-gradient(circle at 76% 18%, rgba(5, 60, 18, .22) 0 2px, transparent 3px),
+      radial-gradient(circle at 42% 72%, rgba(188, 230, 64, .16) 0 2px, transparent 3px);
+    background-size: auto, 16px 16px, 78px 78px, 96px 96px, 68px 68px;
+    mix-blend-mode: multiply;
+  }
+
+  .pixel-shadow {
+    box-shadow: 0 3px 0 #123716, 0 14px 32px rgba(18, 55, 22, 0.18);
+  }
+}
