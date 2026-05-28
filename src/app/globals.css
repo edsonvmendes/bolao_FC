@@ -18,6 +18,12 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 button,
 input,
 select,
@@ -28,6 +34,8 @@ textarea {
 @layer utilities {
   .football-field {
     position: relative;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     isolation: isolate;
     background:
@@ -40,6 +48,12 @@ textarea {
         #16761f 25% 37.5%,
         #299329 37.5% 50%
       );
+  }
+
+  .football-field > .relative {
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
   }
 
   .football-field::before {

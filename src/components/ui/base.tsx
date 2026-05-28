@@ -31,7 +31,7 @@ export function Panel({
 }) {
   return (
     <section
-      className={`rounded-lg border-2 border-lime-950/10 bg-white/95 p-4 shadow-sm ${className}`}
+      className={`min-w-0 overflow-hidden rounded-lg border-2 border-lime-950/10 bg-white/95 p-4 shadow-sm ${className}`}
     >
       {title && <h2 className="text-lg font-black">{title}</h2>}
       {title ? <div className="mt-3">{children}</div> : children}
@@ -95,7 +95,7 @@ export function MetricCard({
   detail?: string;
 }) {
   return (
-    <div className="rounded-lg border-2 border-lime-950/10 bg-white/95 p-4 shadow-sm">
+    <div className="min-w-0 overflow-hidden rounded-lg border-2 border-lime-950/10 bg-white/95 p-4 shadow-sm">
       <p className="text-xs font-black uppercase text-lime-900/60">{label}</p>
       <p className="mt-1 text-3xl font-black leading-none">{value}</p>
       {detail && (

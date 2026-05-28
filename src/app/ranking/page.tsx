@@ -114,9 +114,9 @@ export default async function RankingPage({
   return (
     <main className="football-field min-h-screen pb-28 text-lime-950">
       <div className="relative z-10 mx-auto grid w-full max-w-4xl gap-4 px-3 py-4">
-        <header className="rounded-lg border-2 border-lime-950 bg-yellow-300 p-4">
-          <div className="flex items-center justify-between gap-3">
-            <div>
+        <header className="min-w-0 overflow-hidden rounded-lg border-2 border-lime-950 bg-yellow-300 p-4">
+          <div className="flex min-w-0 items-center justify-between gap-3">
+            <div className="min-w-0">
               <Link href="/" className="text-xl font-black">
                 Bolao da Resenha
               </Link>
@@ -130,7 +130,7 @@ export default async function RankingPage({
               </button>
             </form>
           </div>
-          <nav className="mt-4 grid grid-cols-3 gap-2 text-center text-xs font-black sm:grid-cols-4">
+          <nav className="mt-4 grid grid-cols-2 gap-2 text-center text-xs font-black sm:grid-cols-4">
             <Link className="rounded-md bg-white px-3 py-2" href="/palpites">
               Palpites
             </Link>

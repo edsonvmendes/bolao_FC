@@ -186,14 +186,14 @@ export default async function PredictionsPage({
       isAdmin={profile?.role === "admin"}
     >
       <section
-        className={`rounded-lg border-2 p-5 ${
+        className={`min-w-0 overflow-hidden rounded-lg border-2 p-5 ${
           completed
             ? "border-lime-950 bg-lime-950 text-white"
             : "border-lime-950 bg-yellow-300"
         }`}
       >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
+          <div className="min-w-0">
             <p
               className={`text-xs font-black uppercase ${
                 completed ? "text-lime-100/75" : "text-lime-900/70"
@@ -450,9 +450,9 @@ function Shell({
   return (
     <main className="football-field min-h-screen pb-28 text-lime-950">
       <div className="relative z-10 mx-auto grid w-full max-w-3xl gap-4 px-3 py-4">
-        <header className="rounded-lg border-2 border-lime-950 bg-yellow-300 p-4">
-          <div className="flex items-center justify-between gap-3">
-            <Link href="/" className="text-xl font-black">
+        <header className="min-w-0 overflow-hidden rounded-lg border-2 border-lime-950 bg-yellow-300 p-4">
+          <div className="flex min-w-0 items-center justify-between gap-3">
+            <Link href="/" className="min-w-0 truncate text-xl font-black">
               Bolao da Resenha
             </Link>
             <form action={signOut}>
@@ -464,7 +464,7 @@ function Shell({
           <p className="mt-2 text-sm font-bold text-lime-950/70">
             Fala, {nickname}
           </p>
-          <nav className="mt-4 grid grid-cols-3 gap-2 text-center text-xs font-black sm:grid-cols-4">
+          <nav className="mt-4 grid grid-cols-2 gap-2 text-center text-xs font-black sm:grid-cols-4">
             <Link className="rounded-md bg-white px-3 py-2" href="/palpites">
               Palpites
             </Link>

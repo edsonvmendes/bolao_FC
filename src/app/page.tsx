@@ -191,7 +191,7 @@ export default async function HomePage() {
   return (
     <Shell>
       <div className="grid w-full gap-4">
-        <header className="rounded-lg border-2 border-yellow-300/45 bg-lime-950/92 p-4 text-white shadow-sm backdrop-blur sm:p-5">
+        <header className="min-w-0 overflow-hidden rounded-lg border-2 border-yellow-300/45 bg-lime-950/92 p-4 text-white shadow-sm backdrop-blur sm:p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex min-w-0 items-start gap-3">
               <Image
