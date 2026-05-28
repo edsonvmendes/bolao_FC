@@ -266,7 +266,7 @@ export default async function PredictionsPage({
         />
       ) : (
         <>
-          <section className="rounded-lg border-2 border-lime-950/10 bg-white/95 p-3 shadow-sm">
+          <section className="min-w-0 overflow-hidden rounded-lg border-2 border-lime-950/10 bg-white/95 p-3 shadow-sm">
             <ProgressBar
               label="Progresso geral"
               value={progress}
@@ -318,7 +318,7 @@ export default async function PredictionsPage({
                 />
               );
             })}
-            <div className="sticky bottom-24 z-20 rounded-lg border-2 border-lime-950 bg-white/95 p-2 shadow-lg backdrop-blur">
+            <div className="sticky bottom-[calc(env(safe-area-inset-bottom)+1rem)] z-20 rounded-lg border-2 border-lime-950 bg-white/95 p-2 shadow-lg backdrop-blur">
               <div className="grid grid-cols-[1fr_auto] items-center gap-3">
                 <div className="min-w-0 px-1">
                   <p className="truncate text-xs font-black uppercase text-lime-900/60">
@@ -328,7 +328,7 @@ export default async function PredictionsPage({
                     {visibleMatches.length} jogos nesta tela
                   </p>
                 </div>
-                <SubmitButton className="h-12 px-5">Salvar</SubmitButton>
+                <SubmitButton className="h-12 px-4">Salvar</SubmitButton>
               </div>
             </div>
           </form>
@@ -350,11 +350,11 @@ function FilterRail({
   allActive: boolean;
 }) {
   return (
-    <div>
+    <div className="min-w-0 overflow-hidden">
       <p className="mb-2 text-xs font-black uppercase text-lime-900/60">
         {label}
       </p>
-      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1">
+      <div className="-mx-1 flex max-w-full gap-2 overflow-x-auto px-1 pb-1">
         <Link
           href={allHref}
           className={`shrink-0 rounded-md px-3 py-2 text-xs font-black ${
@@ -397,7 +397,7 @@ function MatchPredictionCard({
   const locked = match.status === "locked" || match.status === "finished";
 
   return (
-    <article className="rounded-lg border-2 border-lime-950/10 bg-white/95 p-3 shadow-sm">
+    <article className="min-w-0 overflow-hidden rounded-lg border-2 border-lime-950/10 bg-white/95 p-3 shadow-sm">
       <input type="hidden" name="match_id" value={match.id} />
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="min-w-0">
@@ -415,9 +415,9 @@ function MatchPredictionCard({
         </div>
         <StatusChip tone={status.tone}>{status.label}</StatusChip>
       </div>
-      <div className="grid grid-cols-[minmax(0,1fr)_112px_minmax(0,1fr)] items-center gap-2">
+      <div className="grid grid-cols-[minmax(0,1fr)_92px_minmax(0,1fr)] items-center gap-2 sm:grid-cols-[minmax(0,1fr)_112px_minmax(0,1fr)]">
         <Team name={home?.name_pt} code={home?.country_code} />
-        <div className="flex items-end justify-center gap-1.5">
+        <div className="flex items-end justify-center gap-1">
           <Score
             name={`home_${match.id}`}
             defaultValue={prediction?.predicted_home_score}
@@ -448,7 +448,7 @@ function Shell({
   isAdmin?: boolean;
 }) {
   return (
-    <main className="football-field min-h-screen pb-28 text-lime-950">
+    <main className="football-field min-h-screen pb-[calc(env(safe-area-inset-bottom)+7rem)] text-lime-950">
       <div className="relative z-10 mx-auto grid w-full max-w-3xl gap-4 px-3 py-4">
         <header className="min-w-0 overflow-hidden rounded-lg border-2 border-lime-950 bg-yellow-300 p-4">
           <div className="flex min-w-0 items-center justify-between gap-3">
@@ -492,7 +492,7 @@ function Team({ name, code }: { name?: string; code?: string }) {
     <div className="grid min-w-0 justify-items-center gap-1">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={flagUrl(code)} alt="" className="h-8 w-8 rounded-full bg-white" />
-      <span className="text-center text-[10px] font-black leading-tight">
+      <span className="max-w-full truncate text-center text-[10px] font-black leading-tight">
         {name ?? "Selecao"}
       </span>
     </div>
@@ -521,7 +521,7 @@ function Score({
         defaultValue={defaultValue}
         required
         readOnly={readOnly}
-        className="h-10 w-10 rounded-md border-2 border-lime-900/20 bg-white text-center text-base font-black outline-none focus:border-yellow-400 read-only:bg-lime-100"
+        className="h-10 w-9 rounded-md border-2 border-lime-900/20 bg-white text-center text-base font-black outline-none focus:border-yellow-400 read-only:bg-lime-100 sm:w-10"
       />
     </label>
   );
