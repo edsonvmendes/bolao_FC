@@ -45,44 +45,19 @@ textarea {
   .football-field::before {
     position: fixed;
     z-index: -2;
-    top: max(16px, 2.8vh);
-    bottom: max(16px, 2.8vh);
+    top: 50%;
     left: 50%;
-    width: min(92vw, 760px);
-    transform: translateX(-50%);
+    width: min(82vw, calc(86vh * .58));
+    aspect-ratio: 58 / 100;
+    transform: translate(-50%, -50%);
     pointer-events: none;
     content: "";
-    opacity: .82;
+    opacity: .78;
+    border: 4px solid rgba(238, 249, 215, .9);
     background:
-      linear-gradient(#eef9d7, #eef9d7) 0 50% / 100% 4px no-repeat,
-      radial-gradient(circle at 50% 50%, transparent 0 13.1%, #eef9d7 13.25% 13.8%, transparent 14%),
-      radial-gradient(circle at 50% 50%, #eef9d7 0 6px, transparent 7px),
-      linear-gradient(#eef9d7, #eef9d7) 0 0 / 100% 5px no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 0 100% / 100% 5px no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 0 0 / 5px 100% no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 100% 0 / 5px 100% no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 19% 0 / 62% 5px no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 19% 18% / 62% 5px no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 19% 0 / 5px 18% no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 81% 0 / 5px 18% no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 33% 0 / 34% 5px no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 33% 8% / 34% 5px no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 33% 0 / 5px 8% no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 67% 0 / 5px 8% no-repeat,
-      radial-gradient(circle at 50% 18%, transparent 0 8.7%, #eef9d7 8.9% 9.45%, transparent 9.7%),
-      linear-gradient(#eef9d7, #eef9d7) 19% 100% / 62% 5px no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 19% 82% / 62% 5px no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 19% 82% / 5px 18% no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 81% 82% / 5px 18% no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 33% 100% / 34% 5px no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 33% 92% / 34% 5px no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 33% 92% / 5px 8% no-repeat,
-      linear-gradient(90deg, #eef9d7, #eef9d7) 67% 92% / 5px 8% no-repeat,
-      radial-gradient(circle at 50% 82%, transparent 0 8.7%, #eef9d7 8.9% 9.45%, transparent 9.7%),
-      linear-gradient(#eef9d7, #eef9d7) 40% -3.5% / 20% 4px no-repeat,
-      linear-gradient(#eef9d7, #eef9d7) 40% 103.5% / 20% 4px no-repeat;
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 580 1000'%3E%3Cg fill='none' stroke='%23eef9d7' stroke-width='5' stroke-linecap='square' opacity='.94'%3E%3Cpath d='M0 500h580'/%3E%3Ccircle cx='290' cy='500' r='82'/%3E%3Cpath d='M110 0v180h360V0M190 0v82h200V0'/%3E%3Cpath d='M110 1000V820h360v180M190 1000v-82h200v82'/%3E%3Cpath d='M220 180a82 82 0 0 0 140 0'/%3E%3Cpath d='M220 820a82 82 0 0 1 140 0'/%3E%3Cpath d='M0 0h580v1000H0z'/%3E%3C/g%3E%3Cg fill='%23eef9d7' opacity='.94'%3E%3Crect x='284' y='494' width='12' height='12'/%3E%3Crect x='284' y='100' width='12' height='12'/%3E%3Crect x='284' y='888' width='12' height='12'/%3E%3C/g%3E%3C/svg%3E")
+        center / 100% 100% no-repeat;
     box-shadow:
-      inset 0 0 0 4px rgba(238, 249, 215, .88),
       inset 0 0 50px rgba(13, 64, 17, .38),
       0 0 44px rgba(0, 27, 15, .42);
   }
